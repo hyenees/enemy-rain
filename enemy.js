@@ -1,5 +1,6 @@
+const enemies = document.querySelector('.enemy');
 const bgHeight = bg.offsetHeight;
-const heroHeight = hero.offsetHeight;
+const enemyHeight = enemies.offsetHeight;
 const audio = new Audio('audio/dying.wav');
 const counter = document.querySelector('.counter');
 let count = 0;
@@ -11,7 +12,7 @@ function enemyMove(enemy){
         const enemyPosition = Number(top.slice(0,top.length-2));
         enemy.style.top = (enemyPosition + 1) + 'px';
        
-        if(enemyPosition === bgHeight - heroHeight) {
+        if(enemyPosition === bgHeight - enemyHeight) {
             clearInterval(fall);
             enemy.style.backgroundPosition='right';
             audio.play();
